@@ -167,4 +167,5 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 ```
 
 here:
-- `mainAxisAlignment` - tells flutter how to align the children of the column. In this case, we want to align them in the center. But it will still be at the edgest of the screen. To fix this, we can wrap the column in a `Center` widget. This will center the column in the screen. Or we can add a `crossAxisAlignment` to the column and set it to `crossAxisAlignment.center`. This will center the column in the screen.
+- `mainAxisAlignment` - tells flutter how to align the children of the column. In this case, we want to align them in the center. But it will still be at the edgest of the screen. To fix this, we can wrap the column in a `Center` widget. This will center the column in the screen. A t the moment we can't use the crossAxisAlignmnet becuase column doest down take the whole width of the screen, it only takes a small section that runs all the way down.
+

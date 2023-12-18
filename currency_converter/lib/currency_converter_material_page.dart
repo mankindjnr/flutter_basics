@@ -5,13 +5,22 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    // create functions here - nothing complicated
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        width: 2,
+        style: BorderStyle.solid,
+      ),
+      borderRadius: BorderRadius.circular(35),
+    );
+
+    return Scaffold(
       backgroundColor: Colors.blueGrey,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 '0',
                 style: TextStyle(
                   fontSize: 80,
@@ -19,20 +28,38 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              TextField(
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-                decoration: InputDecoration(
-                  hintText: 'Enter amount in USD',
-                  hintStyle: TextStyle(
+              // container or padding
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextField(
+                  style: const TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
-                  prefix: Icon(Icons.attach_money),
+                  decoration: InputDecoration(
+                    hintText: 'Enter amount in USD',
+                    hintStyle: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                    prefixIcon: const Icon(Icons.attach_money),
+                    prefixIconColor: Colors.black,
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: border,
+                    enabledBorder: border,
+                  ),
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
+                  
                 ),
               ),
+              // buttons - (raised/appears like txt) or (flat/appears like icon)
+              TextButton(onPressed: () {
+                // ignore: avoid_print
+                print('Convert to Kshs');
+              }, child: const Text('USD')),
             ],
           ),
         ),
