@@ -59,7 +59,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
               TextButton(onPressed: () {
                 // ignore: avoid_print
                 print('Convert to Kshs');
-              }, child: const Text('USD')),
+              },
+              style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.white),
+                  foregroundColor: MaterialStatePropertyAll(Colors.black),
+                  minimumSize: MaterialStatePropertyAll(Size(double.infinity, 50)),
+                  padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 35,
+                  )
+                ),
+              
+              ),
+              child: const Text('CONVERT')),
+
             ],
           ),
         ),
